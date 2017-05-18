@@ -1,0 +1,6 @@
+<rdf-Description>
+    <swrla-isRuleEnabled datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla-isRuleEnabled>
+    <comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tuberculosis weather and location factors [increasing]</comment>
+    <label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TuberculosisEnvironmentalRisk1</label>
+    <type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+</rdf-Description> 
