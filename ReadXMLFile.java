@@ -1,3 +1,5 @@
+package kempot.domparser;
+
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.xpath.XPath;
@@ -13,11 +15,13 @@ import java.io.File;
 import java.util.List;
 
 public class ReadXMLFile {
+	public static Multimap<String,String> networkmap = ArrayListMultimap.create();
+	public static int nodecounter;
 
-	public static void main(String argv[]) {
-		Multimap<String,String> myMultimap = ArrayListMultimap.create();
-
+	public ReadXMLFile() {
+		//this class is intended to retrieve nodes and state names
 	    try {
+	    	List<String> values = null;
 
 			File fXmlFile = new File("network2.xml");
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -40,16 +44,21 @@ public class ReadXMLFile {
 				String roughstates = stateList.item(i).getFirstChild().getNodeValue();
 			    String nodes[]=roughnodes.split("#");
 			    String states[]=roughstates.split("#");
-			    myMultimap.put(nodes[1], states[1]);
-			    System.out.println(nodes[1]+": "+states[1]);
+			    networkmap.put(nodes[1], states[1]);
+//			    System.out.println(nodes[1]+": "+states[1]);
 //			    System.out.println(states[1]);
 			}
 			
-			// Display content 	
-			for (String key : myMultimap.keySet()) {
-			     List<String> values = (List<String>) myMultimap.get(key);
-			     System.out.println(key + ": " + values);
+			// Display content
+			nodecounter = 0;
+			for (String key : networkmap.keySet()) {
+				nodecounter++;
+			     values = (List<String>) networkmap.get(key);
+			     //System.out.println(values.size());
+			     //System.out.println(key + ": " + values);
 			}
+			//System.out.println(nodecounter);
+			
 				
 	    } catch (Exception e) {
 		e.printStackTrace();
