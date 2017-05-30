@@ -50,12 +50,10 @@ public class ReadXMLFile {
 			}
 			
 			// Display content
-			nodecounter = 0;
 			for (String key : networkmap.keySet()) {
-				nodecounter++;
 			     values = (List<String>) networkmap.get(key);
-			     //System.out.println(values.size());
-			     //System.out.println(key + ": " + values);
+//			     System.out.println(values.size()); //ukuran statenum
+//			     System.out.println(key+" "+values); //print node: states
 			}
 			//System.out.println(nodecounter);
 			
