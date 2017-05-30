@@ -1,10 +1,4 @@
 <rdf:RDF>
-    <owl:NamedIndividual rdf:about="http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Adolescence">
-        <rdf:type rdf:resource="http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#DevelopmentStage"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Adults -->
 
     <owl:NamedIndividual rdf:about="http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Adults">
@@ -45,25 +39,9 @@
     
 
 
-    <!-- http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Cough -->
-
-    <owl:NamedIndividual rdf:about="http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Cough">
-        <rdf:type rdf:resource="http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Symptom"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#EatingMeats -->
 
     <owl:NamedIndividual rdf:about="http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#EatingMeats">
-        <rdf:type rdf:resource="http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Habits"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#EatingPoultry -->
-
-    <owl:NamedIndividual rdf:about="http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#EatingPoultry">
         <rdf:type rdf:resource="http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Habits"/>
     </owl:NamedIndividual>
     
@@ -173,14 +151,6 @@
     
 
 
-    <!-- http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Newborns -->
-
-    <owl:NamedIndividual rdf:about="http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Newborns">
-        <rdf:type rdf:resource="http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#DevelopmentStage"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Northern -->
 
     <owl:NamedIndividual rdf:about="http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Northern">
@@ -209,14 +179,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Smoking">
         <rdf:type rdf:resource="http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Habits"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#SoreThroat -->
-
-    <owl:NamedIndividual rdf:about="http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#SoreThroat">
-        <rdf:type rdf:resource="http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Symptom"/>
     </owl:NamedIndividual>
     
 
@@ -269,14 +231,6 @@
     
 
 
-    <!-- http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Vegan -->
-
-    <owl:NamedIndividual rdf:about="http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Vegan">
-        <rdf:type rdf:resource="http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Habits"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Windy -->
 
     <owl:NamedIndividual rdf:about="http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Windy">
@@ -290,4 +244,5 @@
     <owl:NamedIndividual rdf:about="http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Winter">
         <rdf:type rdf:resource="http://www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Season"/>
     </owl:NamedIndividual>
+    
 </rdf:RDF>
