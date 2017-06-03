@@ -12,7 +12,6 @@ import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
 
 import java.io.File;
-import java.util.List;
 
 public class ReadXMLFile {
 	public static Multimap<String,String> networkmap = ArrayListMultimap.create();
@@ -21,7 +20,7 @@ public class ReadXMLFile {
 	public ReadXMLFile() {
 		//this class is intended to retrieve nodes and state names
 	    try {
-	    	List<String> values = null;
+//	    	List<String> values = null;
 
 			File fXmlFile = new File("network2.xml");
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -45,18 +44,12 @@ public class ReadXMLFile {
 			    String nodes[]=roughnodes.split("#");
 			    String states[]=roughstates.split("#");
 			    networkmap.put(nodes[1], states[1]);
-//			    System.out.println(nodes[1]+": "+states[1]);
-//			    System.out.println(states[1]);
 			}
 			
 			// Display content
-			for (String key : networkmap.keySet()) {
-			     values = (List<String>) networkmap.get(key);
-//			     System.out.println(values.size()); //ukuran statenum
-//			     System.out.println(key+" "+values); //print node: states
-			}
-			//System.out.println(nodecounter);
-			
+//			for (String key : networkmap.keySet()) {
+//			     values = (List<String>) networkmap.get(key);
+//			}			
 				
 	    } catch (Exception e) {
 		e.printStackTrace();

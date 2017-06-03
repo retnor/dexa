@@ -1,31 +1,72 @@
 package kempot.domparser;
 
-import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.File;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+
 import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathFactory;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
-import java.io.File;
-import java.util.HashMap;
+import com.google.common.collect.ArrayListMultimap;
+import com.google.common.collect.Multimap;
 
-
-public class ReadXMLFile2 {
-	//this class is intended to decipher the SWRLs
+public class ReadOntology {
 	
-	public static HashMap<String, Rules> ruleListObj = new HashMap<String, Rules>();
+	public Multimap<String,String> networkmap = ArrayListMultimap.create();
+	public int nodecounter;
+	public HashMap<String, Rules> ruleListObj = new HashMap<String, Rules>();
 	public float Probs;
 	public Rules rules;
-
-	public ReadXMLFile2(){
+	
+	private List<String> values = null;
+	private File fXmlFile = new File("rule2.xml");
+	private DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+	private DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+	private Document doc = dBuilder.parse(fXmlFile);
 		
-	    try {   	
-			File fXmlFile = new File("rule4.xml");
-			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-			Document doc = dBuilder.parse(fXmlFile);
+	private XPath xPath =  XPathFactory.newInstance().newXPath();
+	
+	public ReadOntology() throws ParserConfigurationException, SAXException, IOException{
+		try {   		
+			String stateExpression, nodeExpression;
+			
+			nodeExpression = "/rdf-RDF/owl-NamedIndividual/rdf-type/@rdf-resource"; //nodes
+			stateExpression = "/rdf-RDF/owl-NamedIndividual/@rdf-about"; //states
+			
+			
+			NodeList nodeList = (NodeList) xPath.compile(nodeExpression).evaluate(doc, XPathConstants.NODESET);
+			NodeList stateList = (NodeList) xPath.compile(stateExpression).evaluate(doc, XPathConstants.NODESET);
+			
+			for (int i = 0; i < nodeList.getLength(); i++) {
+				String roughnodes = nodeList.item(i).getFirstChild().getNodeValue();
+				String roughstates = stateList.item(i).getFirstChild().getNodeValue();
+			    String nodes[]=roughnodes.split("#");
+			    String states[]=roughstates.split("#");
+			    networkmap.put(nodes[1], states[1]);
+			}
+			
+			// Display content network
+			for (String key : networkmap.keySet()) {
+			     values = (List<String>) networkmap.get(key);
+			     //System.out.println(key+": "+values);
+			}
+		
+		} catch (Exception e) {
+		e.printStackTrace();
+	    }
+	}
+		
+	public void execRule(){
+		try{
 			
 			XPath xPath =  XPathFactory.newInstance().newXPath();
 			
@@ -58,11 +99,14 @@ public class ReadXMLFile2 {
 			    ruleID = temprulehead[1];   
 			    ruleIDprob = ruleprobList.item(i).getFirstChild().getNodeValue();
 			    ruleListObj.put(ruleID+"-"+ruleAtt, new Rules(keyrule, ruleAtt, rulealter, ruleID, ruleIDprob)); 
+//			    System.out.println(ruleID+"-"+ruleAtt);
+//			    System.out.println(keyrule);
+//			    System.out.println(rulealter);
+//			    System.out.println(ruleIDprob);
 			} 
 			
 	    } catch (Exception e) {
 		e.printStackTrace();
 	    }
 	  }
-
-}
+	}

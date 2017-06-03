@@ -1,11 +1,16 @@
 package kempot.domparser;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.xml.sax.SAXException;
+
 import com.google.common.collect.Multimap;
 
-import kempot.trialcode.MemoryCheck;
 import norsys.netica.Environ;
 import norsys.netica.Net;
 import norsys.netica.NeticaException;
@@ -15,19 +20,22 @@ import norsys.neticaEx.aliases.Node;
 public class NetConverter {
 	
 	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		long startTime = System.currentTimeMillis();
+	public static int counterImpPairs = 0;
+	
+	public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
 		
-		ReadXMLFile network = new ReadXMLFile();
+		long startTime = System.currentTimeMillis();
+		//ReadXMLFile network = new ReadXMLFile();
+		ReadOntology network = new ReadOntology();
 		Multimap<String,String> map = network.networkmap;
 		List<Integer> statenums = new ArrayList<Integer>();
+		ArrayList<String> queue = new ArrayList<String>();
+		int jailbreakCounter=0;
 		
 		try {
 			System.out.println ("\nWelcome to Netica-J !\n");
 	
 	    	Node.setConstructorClass ("norsys.neticaEx.aliases.Node");
-	    	//Environ env = 
 	    	new Environ (null);
 			
 			Net   net          = new Net();
@@ -36,104 +44,139 @@ public class NetConverter {
 	    	Node  tuberculosis   = new Node ("Tuberculosis",     "AtRisk, NotAtRisk",    net);
 	    	Node tempID = null;
 	    	Node  tempnode = null;
-//		
-//	    	NetsProperties arrc = new NetsProperties();
 	    	
-	    	//String nodename = null;
+	    	int numOfnodes = 0;
 	    	
 	    	for (String key : map.keySet()) {
 	    		 String statenames = "";
 	    		 String statecols = "";
-	    		 String statecolsID = "";
 	    		 
-	    		 //if ID
+	    		 //ignoring creating Infectious Diseases
 	    		 if(key.equals("InfectiousDiseases")){
-//	    			 statecolsID = "AtRisk, NotAtRisk";
-//	    			 	List<String> valuesID = (List<String>) map.get(key);
-//				     
-//	    			 	for (String valueID : valuesID){
-//	    			 	tempID = new Node (valueID, statecolsID, net);
-//	    			 	System.out.println(valueID+" "+statecolsID);
-//				     }
 	    			 continue;
 	    		 }
 	    		 else{
 				     List<String> values = (List<String>) map.get(key);
 				     int statenum = values.size();
 				     statenums.add(statenum);
+				     
+				     //constructing state names per node
 				     for (String value : values){
 				    	 statenames = statenames+value+",";
 				     }
 				     
+				     //erasing the last comma of generated state names
 				     statecols = statenames.substring(0, (statenames.length()-1));
-//				     System.out.println(statecols);
 				     tempnode = new Node (key, statecols, net);
-				     
 	    		 }
 	    		 
+	    		 //adding queue feature of multimap which make sure that keys are ordered as inserted
+	    		 queue.add(key);
+	    		 //System.out.println(queue.size());
+	    		 numOfnodes++;
 			     tuberculosis.addLink(tempnode);
 			}
-	    	   	
-			CPTconstruction setcpt;
-			float atrisk;
-			//12 nodes
-			String stemp="";
-			for (int r=0; r<statenums.get(0); r++){
-				for (int s=0; s<statenums.get(1); s++){
-					for (int t=0; t<statenums.get(2); t++){
-						for (int u=0; u<statenums.get(3); u++){
-							for (int v=0; v<statenums.get(4); v++){
-								for (int w=0; w<statenums.get(5); w++){
-									for (int x=0; x<statenums.get(6); x++){
-										for (int y=0; y<statenums.get(7); y++){
-											for (int z=0; z<statenums.get(8); z++){
-												for (int aa=0; aa<statenums.get(9); aa++){
-													for (int ab=0; ab<statenums.get(10); ab++){
-														for (int ac=0; ac<statenums.get(11); ac++){
-								stemp = ((List<String>) map.get("Hemisphere")).get(r)+","+((List<String>) map.get("Gender")).get(s)+","+
-										((List<String>) map.get("Natural")).get(t)+","+((List<String>) map.get("Weather")).get(u)+","+
-										((List<String>) map.get("Profession")).get(v)+","+((List<String>) map.get("PreExistingIllness")).get(w)+","+
-										((List<String>) map.get("ManMade")).get(x)+","+((List<String>) map.get("DevelopmentStage")).get(y)+","+
-										((List<String>) map.get("Country")).get(z)+","+((List<String>) map.get("Season")).get(aa)+","+
-										((List<String>) map.get("Symptom")).get(ab)+","+((List<String>) map.get("Habits")).get(ac);
-								
-								//System.out.println(stemp);
-								setcpt = new CPTconstruction(stemp, "Tuberculosis");
-								atrisk = setcpt.jprob;
-								System.out.println(stemp+": "+atrisk);
-								//tuberculosis.setCPTable(stemp, 0.03, 0.97);
-																}
-															}
-														}
-													}
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-					}
-//				}
-//			}
+
+            /** CHANGED BITS
+             * Harshvardhan Pandit
+             */
+            
+            // this are the values in the first column
+            // construct a list for each value and store them in data
+            ArrayList<ArrayList<String>> data = new ArrayList<ArrayList<String>>();
+            List<String> list = (List<String>) map.get(queue.get(0));
+            for (int i=0; i<statenums.get(0); i++) {
+                ArrayList<String> item = new ArrayList<String>();
+                item.add(list.get(i));
+                
+                data.add(item);
+            }
+
+            // iterate over the rest of columns
+            // and add items to each list
+            // n is the number of columns, which go from 0 to 12
+            // since we handled column0, n goes from 1 to 12
+            try{
+            	PrintWriter writer = new PrintWriter("log.txt");
+            
+            ImpossibleCombinations check = new ImpossibleCombinations();
+        	float atrisk=0;
+        	CPTconstruction setcpt;
+        	
+            for (int n=1; n<=(numOfnodes-1); n++) {
+            
+                // newdata is a temporary variable to hold data
+                // which will be assigned to data AFTER the loop ends
+                // This is to keep existing data unchanged until the loop finishes
+                ArrayList<ArrayList<String>> newdata = new ArrayList<ArrayList<String>>();
+                list = (List<String>) map.get(queue.get(n));
+                // try--> for (i=0; i<list.size(); i++) {
+                for (int j=0; j<data.size(); j++) {
+                	for (int i=0; i<statenums.get(n); i++) {
+                    
+                        // create a new list as a copy of an item in data
+                        ArrayList<String> item = new ArrayList<String>(data.get(j));
+                        // add the item from current column to list
+                        item.add(list.get(i)); 
+                        newdata.add(item);
+                        if (n == (numOfnodes-1)) {
+                        	
+                        	String tempStemp = String.join(",", item);
+                        	
+                            /** Harshvardhan Pandit
+                             */
+
+                            // impossibleConditions: List of List of Strings
+                            // containing permutations of every impossible conditions
+                        	boolean isValid = check.checkValidPermutation(item);
+                            if (isValid) {
+                                setcpt = new CPTconstruction(tempStemp, "Tuberculosis");
+                                atrisk = setcpt.jprob;
+                                jailbreakCounter++;
+                            } 
+                            
+                            else 
+                                atrisk = 0;
+                            
+                            //writer.println(tempStemp+": "+atrisk);
+                            //System.out.println(tempStemp+" :"+atrisk);
+                            //tuberculosis.setCPTable(tempStemp, 0.03, (1-0.03));
+                            tuberculosis.setCPTable(tempStemp, atrisk, (1-atrisk));
+                       // isValid -> true if valid; false otherwise
+                        }
+                    }
+                }
+                // store newdata as data
+                data = newdata;
+            }
+            } catch(IOException e) {
+            
+            }
+            
+            //for(int i ){
+            
+            //}
+            
+            /** END OF CHANGE **/
+			
+			System.out.println("Finish writing "+data.size()+" lines of CPT");
+			System.out.println("Contain "+jailbreakCounter+" lines of impossible combination");
 			
 			Streamer stream = new Streamer ("Dexa4.dne");
 	    	net.write(stream);
-
+	    	
 		} catch (NeticaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		MemoryCheck mem = new MemoryCheck();
-		System.out.println(mem.maxMemory());
-		System.out.println(mem.allocatedMemory());
-		System.out.println(mem.freeMemory());
-		System.out.println(mem.usedMemory());
 		
 		long endTime = System.currentTimeMillis();
-
+		
 		System.out.println("That took " + (endTime - startTime) + " milliseconds");
+		
+		System.out.println("Network and CPT have been created!!");
+		
 	}
 
 }

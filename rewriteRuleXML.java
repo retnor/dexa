@@ -3,7 +3,6 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 
 import java.io.FileInputStream;
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -22,7 +21,7 @@ public class rewriteRuleXML {
 			while ((strline = br.readLine()) != null)
 			{
 			    ar =strline.replace(':', '-');
-			    System.out.println(ar);
+			    //System.out.println(ar);
 				bw.write(ar);
 			}
 		} catch (IOException e) {

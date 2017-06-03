@@ -22,7 +22,7 @@ public class rewriteNetworkXML {
 			while ((strline = br.readLine()) != null)
 			{
 			    ar =strline.replace(':', '-');
-			    System.out.println(ar);
+			    //System.out.println(ar);
 				bw.write(ar);
 			}
 		} catch (IOException e) {

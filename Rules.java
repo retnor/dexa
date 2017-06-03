@@ -12,10 +12,9 @@ public class Rules {
 		
 	}
 	
-	Rules(String name, String type, String attribute, String alter, String dis, String prob){
+	Rules(String name, String attribute, String alter, String dis, String prob){
 		rulenames = name;
 		disease = dis;
-		ruletype = type;
 		ruleAtt = attribute;
 		rulealter = alter;
 		ruleProb = Float.parseFloat(prob);
@@ -27,10 +26,6 @@ public class Rules {
 	
 	public String getRuleDisease(){
 		return disease;
-	}
-	
-	public String getRuleType(){
-		return ruletype;
 	}
 	
 	public float getProb(){
