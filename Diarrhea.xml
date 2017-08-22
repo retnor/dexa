@@ -1,0 +1,1083 @@
+<?xml version="1.0"?>
+<rdf-RDF xmlns="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#"
+     xml-base="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas"
+     xmlns-rdf="http-//www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns-owl="http-//www.w3.org/2002/07/owl#"
+     xmlns-xml="http-//www.w3.org/XML/1998/namespace"
+     xmlns-swrlb="http-//www.w3.org/2003/11/swrlb#"
+     xmlns-swrl="http-//www.w3.org/2003/11/swrl#"
+     xmlns-pwidas="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#"
+     xmlns-xsd="http-//www.w3.org/2001/XMLSchema#"
+     xmlns-rdfs="http-//www.w3.org/2000/01/rdf-schema#"
+     xmlns-swrla="http-//swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns-pwidas2="http-//www.semanticweb.org/revalina/ontologies/2016/10/pwidas#">
+    <owl-Ontology rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http-//swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl-AnnotationProperty rdf-about="http-//swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#accessDuring -->
+
+    <owl-ObjectProperty rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#accessDuring">
+        <rdfs-domain rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Country"/>
+        <rdfs-domain rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Environment"/>
+        <rdfs-domain rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Geocodes"/>
+        <rdfs-domain rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person"/>
+        <rdfs-range rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Climate"/>
+    </owl-ObjectProperty>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasDevelopmentStage -->
+
+    <owl-ObjectProperty rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasDevelopmentStage">
+        <rdfs-domain rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person"/>
+        <rdfs-range rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Age"/>
+        <rdfs-range rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#DevelopmentStage"/>
+    </owl-ObjectProperty>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasExistingIllness -->
+
+    <owl-ObjectProperty rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasExistingIllness">
+        <rdfs-domain rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person"/>
+        <rdfs-range rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#PreExistingIllness"/>
+    </owl-ObjectProperty>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasFeature -->
+
+    <owl-ObjectProperty rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasFeature">
+        <rdfs-domain rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Environment"/>
+        <rdfs-range rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Features"/>
+    </owl-ObjectProperty>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasGender -->
+
+    <owl-ObjectProperty rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasGender">
+        <rdfs-domain rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person"/>
+        <rdfs-range rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Gender"/>
+    </owl-ObjectProperty>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasHabits -->
+
+    <owl-ObjectProperty rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasHabits">
+        <rdfs-domain rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person"/>
+        <rdfs-range rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Habits"/>
+    </owl-ObjectProperty>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasMutation -->
+
+    <owl-ObjectProperty rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasMutation">
+        <rdfs-domain rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person"/>
+        <rdfs-range rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Genetic"/>
+    </owl-ObjectProperty>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasOccupation -->
+
+    <owl-ObjectProperty rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasOccupation">
+        <rdfs-domain rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person"/>
+        <rdfs-range rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Occupation"/>
+    </owl-ObjectProperty>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasRelationship -->
+
+    <owl-ObjectProperty rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasRelationship">
+        <rdfs-domain rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person"/>
+        <rdfs-range rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Relationship"/>
+    </owl-ObjectProperty>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasRiskOf -->
+
+    <owl-ObjectProperty rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasRiskOf">
+        <rdfs-domain rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#InfectiousDiseases"/>
+        <rdfs-domain rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person"/>
+        <rdfs-range rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#InfectiousDiseases"/>
+    </owl-ObjectProperty>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#liveAround -->
+
+    <owl-ObjectProperty rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#liveAround">
+        <rdfs-subPropertyOf rdf-resource="http-//www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs-domain rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person"/>
+        <rdfs-range rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Features"/>
+    </owl-ObjectProperty>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#liveIn -->
+
+    <owl-ObjectProperty rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#liveIn">
+        <rdfs-subPropertyOf rdf-resource="http-//www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs-domain rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person"/>
+        <rdfs-range rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Country"/>
+    </owl-ObjectProperty>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#reportSymptoms -->
+
+    <owl-ObjectProperty rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#reportSymptoms">
+        <rdfs-domain rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person"/>
+        <rdfs-range rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Symptom"/>
+    </owl-ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#addRisk -->
+
+    <owl-DatatypeProperty rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#addRisk">
+        <rdfs-domain rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#InfectiousDiseases"/>
+        <rdfs-range rdf-resource="http-//www.w3.org/2001/XMLSchema#float"/>
+    </owl-DatatypeProperty>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#alterRisk -->
+
+    <owl-DatatypeProperty rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#alterRisk">
+        <rdfs-domain rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#InfectiousDiseases"/>
+        <rdfs-range rdf-resource="http-//www.w3.org/2001/XMLSchema#float"/>
+    </owl-DatatypeProperty>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasAgeInteger -->
+
+    <owl-DatatypeProperty rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasAgeInteger">
+        <rdfs-domain rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Age"/>
+        <rdfs-range rdf-resource="http-//www.w3.org/2001/XMLSchema#int"/>
+    </owl-DatatypeProperty>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasGeocodes -->
+
+    <owl-DatatypeProperty rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasGeocodes">
+        <rdfs-domain rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Features"/>
+        <rdfs-domain rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Location"/>
+        <rdfs-domain rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person"/>
+        <rdfs-range rdf-resource="http-//www.w3.org/2001/XMLSchema#long"/>
+    </owl-DatatypeProperty>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasLatitudes -->
+
+    <owl-DatatypeProperty rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasLatitudes">
+        <rdfs-subPropertyOf rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasGeocodes"/>
+        <rdfs-domain rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Geocodes"/>
+        <rdfs-range rdf-resource="http-//www.w3.org/2001/XMLSchema#long"/>
+    </owl-DatatypeProperty>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasLongitudes -->
+
+    <owl-DatatypeProperty rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasLongitudes">
+        <rdfs-subPropertyOf rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasGeocodes"/>
+        <rdfs-domain rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Geocodes"/>
+        <rdfs-range rdf-resource="http-//www.w3.org/2001/XMLSchema#long"/>
+    </owl-DatatypeProperty>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#reduceRisk -->
+
+    <owl-DatatypeProperty rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#reduceRisk">
+        <rdfs-domain rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#InfectiousDiseases"/>
+        <rdfs-range rdf-resource="http-//www.w3.org/2001/XMLSchema#float"/>
+    </owl-DatatypeProperty>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#setRisk -->
+
+    <owl-DatatypeProperty rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#setRisk">
+        <rdfs-domain rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#InfectiousDiseases"/>
+        <rdfs-range rdf-resource="http-//www.w3.org/2001/XMLSchema#float"/>
+    </owl-DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Age -->
+
+    <owl-Class rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Age">
+        <rdfs-subClassOf rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person"/>
+    </owl-Class>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Climate -->
+
+    <owl-Class rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Climate">
+        <rdfs-subClassOf rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Environment"/>
+    </owl-Class>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Country -->
+
+    <owl-Class rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Country">
+        <rdfs-subClassOf rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Location"/>
+    </owl-Class>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#DevelopmentStage -->
+
+    <owl-Class rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#DevelopmentStage">
+        <rdfs-subClassOf rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person"/>
+    </owl-Class>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Eating -->
+
+    <owl-Class rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Eating">
+        <rdfs-subClassOf rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Habits"/>
+    </owl-Class>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Environment -->
+
+    <owl-Class rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Environment"/>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Features -->
+
+    <owl-Class rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Features">
+        <rdfs-subClassOf rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Environment"/>
+    </owl-Class>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Gender -->
+
+    <owl-Class rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Gender">
+        <rdfs-subClassOf rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person"/>
+    </owl-Class>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Genetic -->
+
+    <owl-Class rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Genetic">
+        <rdfs-subClassOf rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person"/>
+    </owl-Class>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Geocodes -->
+
+    <owl-Class rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Geocodes"/>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Habits -->
+
+    <owl-Class rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Habits">
+        <rdfs-subClassOf rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person"/>
+    </owl-Class>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Hemisphere -->
+
+    <owl-Class rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Hemisphere">
+        <rdfs-subClassOf rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Location"/>
+    </owl-Class>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#InfectiousDiseases -->
+
+    <owl-Class rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#InfectiousDiseases">
+        <owl-disjointWith rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#PreExistingIllness"/>
+    </owl-Class>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Location -->
+
+    <owl-Class rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Location">
+        <rdfs-subClassOf rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Environment"/>
+    </owl-Class>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#ManMade -->
+
+    <owl-Class rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#ManMade">
+        <rdfs-subClassOf rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Features"/>
+    </owl-Class>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Natural -->
+
+    <owl-Class rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Natural">
+        <rdfs-subClassOf rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Features"/>
+    </owl-Class>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person -->
+
+    <owl-Class rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person"/>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#PreExistingIllness -->
+
+    <owl-Class rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#PreExistingIllness">
+        <rdfs-subClassOf rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person"/>
+    </owl-Class>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Occupation -->
+
+    <owl-Class rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Occupation">
+        <rdfs-subClassOf rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person"/>
+    </owl-Class>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Relationship -->
+
+    <owl-Class rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Relationship">
+        <rdfs-subClassOf rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person"/>
+    </owl-Class>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Season -->
+
+    <owl-Class rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Season">
+        <rdfs-subClassOf rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Climate"/>
+    </owl-Class>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Smoking -->
+
+    <owl-Class rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Smoking">
+        <rdfs-subClassOf rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Habits"/>
+    </owl-Class>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Symptom -->
+
+    <owl-Class rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Symptom">
+        <rdfs-subClassOf rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person"/>
+    </owl-Class>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Weather -->
+
+    <owl-Class rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Weather">
+        <rdfs-subClassOf rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Climate"/>
+    </owl-Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Diarrhea -->
+
+    <owl-NamedIndividual rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Diarrhea">
+        <rdf-type rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#InfectiousDiseases"/>
+    </owl-NamedIndividual>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Female -->
+
+    <owl-NamedIndividual rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Female">
+        <rdf-type rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Gender"/>
+    </owl-NamedIndividual>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#India -->
+
+    <owl-NamedIndividual rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#India">
+        <rdf-type rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Country"/>
+    </owl-NamedIndividual>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Male -->
+
+    <owl-NamedIndividual rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Male">
+        <rdf-type rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Gender"/>
+    </owl-NamedIndividual>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#a0to4 -->
+
+    <owl-NamedIndividual rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#a0to4">
+        <rdf-type rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Age"/>
+    </owl-NamedIndividual>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#a10to19 -->
+
+    <owl-NamedIndividual rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#a10to19">
+        <rdf-type rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Age"/>
+    </owl-NamedIndividual>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#a20to29 -->
+
+    <owl-NamedIndividual rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#a20to29">
+        <rdf-type rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Age"/>
+    </owl-NamedIndividual>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#a30to39 -->
+
+    <owl-NamedIndividual rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#a30to39">
+        <rdf-type rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Age"/>
+    </owl-NamedIndividual>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#a40to49 -->
+
+    <owl-NamedIndividual rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#a40to49">
+        <rdf-type rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Age"/>
+    </owl-NamedIndividual>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#a50to59 -->
+
+    <owl-NamedIndividual rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#a50to59">
+        <rdf-type rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Age"/>
+    </owl-NamedIndividual>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#a5to9 -->
+
+    <owl-NamedIndividual rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#a5to9">
+        <rdf-type rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Age"/>
+    </owl-NamedIndividual>
+    
+
+
+    <!-- http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#over60 -->
+
+    <owl-NamedIndividual rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#over60">
+        <rdf-type rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Age"/>
+    </owl-NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf-Description rdf-about="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#allpeople">
+        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#Variable"/>
+    </rdf-Description>
+    <rdf-Description>
+        <swrla-isRuleEnabled rdf-datatype="http-//www.w3.org/2001/XMLSchema#boolean">true</swrla-isRuleEnabled>
+        <rdfs-comment rdf-datatype="http-//www.w3.org/2001/XMLSchema#string">Age - 0to4</rdfs-comment>
+        <rdfs-label rdf-datatype="http-//www.w3.org/2001/XMLSchema#string">S1</rdfs-label>
+        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#Imp"/>
+        <swrl-body>
+            <rdf-Description>
+                <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf-first>
+                    <rdf-Description>
+                        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl-classPredicate rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person"/>
+                        <swrl-argument1 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#allpeople"/>
+                    </rdf-Description>
+                </rdf-first>
+                <rdf-rest>
+                    <rdf-Description>
+                        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf-first>
+                            <rdf-Description>
+                                <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl-propertyPredicate rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasDevelopmentStage"/>
+                                <swrl-argument1 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#allpeople"/>
+                                <swrl-argument2 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#a0to4"/>
+                            </rdf-Description>
+                        </rdf-first>
+                        <rdf-rest rdf-resource="http-//www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf-Description>
+                </rdf-rest>
+            </rdf-Description>
+        </swrl-body>
+        <swrl-head>
+            <rdf-Description>
+                <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf-first>
+                    <rdf-Description>
+                        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl-propertyPredicate rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#alterRisk"/>
+                        <swrl-argument1 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Diarrhea"/>
+                        <swrl-argument2 rdf-datatype="http-//www.w3.org/2001/XMLSchema#float">3.123</swrl-argument2>
+                    </rdf-Description>
+                </rdf-first>
+                <rdf-rest rdf-resource="http-//www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf-Description>
+        </swrl-head>
+    </rdf-Description>
+    <rdf-Description>
+        <swrla-isRuleEnabled rdf-datatype="http-//www.w3.org/2001/XMLSchema#boolean">true</swrla-isRuleEnabled>
+        <rdfs-comment rdf-datatype="http-//www.w3.org/2001/XMLSchema#string">Age - 20to29</rdfs-comment>
+        <rdfs-label rdf-datatype="http-//www.w3.org/2001/XMLSchema#string">S4</rdfs-label>
+        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#Imp"/>
+        <swrl-body>
+            <rdf-Description>
+                <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf-first>
+                    <rdf-Description>
+                        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl-classPredicate rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person"/>
+                        <swrl-argument1 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#allpeople"/>
+                    </rdf-Description>
+                </rdf-first>
+                <rdf-rest>
+                    <rdf-Description>
+                        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf-first>
+                            <rdf-Description>
+                                <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl-propertyPredicate rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasDevelopmentStage"/>
+                                <swrl-argument1 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#allpeople"/>
+                                <swrl-argument2 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#a20to29"/>
+                            </rdf-Description>
+                        </rdf-first>
+                        <rdf-rest rdf-resource="http-//www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf-Description>
+                </rdf-rest>
+            </rdf-Description>
+        </swrl-body>
+        <swrl-head>
+            <rdf-Description>
+                <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf-first>
+                    <rdf-Description>
+                        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl-propertyPredicate rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#alterRisk"/>
+                        <swrl-argument1 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Diarrhea"/>
+                        <swrl-argument2 rdf-datatype="http-//www.w3.org/2001/XMLSchema#float">0.509</swrl-argument2>
+                    </rdf-Description>
+                </rdf-first>
+                <rdf-rest rdf-resource="http-//www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf-Description>
+        </swrl-head>
+    </rdf-Description>
+    <rdf-Description>
+        <swrla-isRuleEnabled rdf-datatype="http-//www.w3.org/2001/XMLSchema#boolean">true</swrla-isRuleEnabled>
+        <rdfs-comment rdf-datatype="http-//www.w3.org/2001/XMLSchema#string">Age - 30to39</rdfs-comment>
+        <rdfs-label rdf-datatype="http-//www.w3.org/2001/XMLSchema#string">S5</rdfs-label>
+        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#Imp"/>
+        <swrl-body>
+            <rdf-Description>
+                <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf-first>
+                    <rdf-Description>
+                        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl-classPredicate rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person"/>
+                        <swrl-argument1 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#allpeople"/>
+                    </rdf-Description>
+                </rdf-first>
+                <rdf-rest>
+                    <rdf-Description>
+                        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf-first>
+                            <rdf-Description>
+                                <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl-propertyPredicate rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasDevelopmentStage"/>
+                                <swrl-argument1 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#allpeople"/>
+                                <swrl-argument2 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#a30to39"/>
+                            </rdf-Description>
+                        </rdf-first>
+                        <rdf-rest rdf-resource="http-//www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf-Description>
+                </rdf-rest>
+            </rdf-Description>
+        </swrl-body>
+        <swrl-head>
+            <rdf-Description>
+                <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf-first>
+                    <rdf-Description>
+                        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl-propertyPredicate rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#alterRisk"/>
+                        <swrl-argument1 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Diarrhea"/>
+                        <swrl-argument2 rdf-datatype="http-//www.w3.org/2001/XMLSchema#float">0.878</swrl-argument2>
+                    </rdf-Description>
+                </rdf-first>
+                <rdf-rest rdf-resource="http-//www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf-Description>
+        </swrl-head>
+    </rdf-Description>
+    <rdf-Description>
+        <swrla-isRuleEnabled rdf-datatype="http-//www.w3.org/2001/XMLSchema#boolean">true</swrla-isRuleEnabled>
+        <rdfs-comment rdf-datatype="http-//www.w3.org/2001/XMLSchema#string">Age - 40to49</rdfs-comment>
+        <rdfs-label rdf-datatype="http-//www.w3.org/2001/XMLSchema#string">S6</rdfs-label>
+        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#Imp"/>
+        <swrl-body>
+            <rdf-Description>
+                <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf-first>
+                    <rdf-Description>
+                        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl-classPredicate rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person"/>
+                        <swrl-argument1 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#allpeople"/>
+                    </rdf-Description>
+                </rdf-first>
+                <rdf-rest>
+                    <rdf-Description>
+                        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf-first>
+                            <rdf-Description>
+                                <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl-propertyPredicate rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasDevelopmentStage"/>
+                                <swrl-argument1 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#allpeople"/>
+                                <swrl-argument2 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#a40to49"/>
+                            </rdf-Description>
+                        </rdf-first>
+                        <rdf-rest rdf-resource="http-//www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf-Description>
+                </rdf-rest>
+            </rdf-Description>
+        </swrl-body>
+        <swrl-head>
+            <rdf-Description>
+                <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf-first>
+                    <rdf-Description>
+                        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl-propertyPredicate rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#alterRisk"/>
+                        <swrl-argument1 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Diarrhea"/>
+                        <swrl-argument2 rdf-datatype="http-//www.w3.org/2001/XMLSchema#float">1.233</swrl-argument2>
+                    </rdf-Description>
+                </rdf-first>
+                <rdf-rest rdf-resource="http-//www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf-Description>
+        </swrl-head>
+    </rdf-Description>
+    <rdf-Description>
+        <swrla-isRuleEnabled rdf-datatype="http-//www.w3.org/2001/XMLSchema#boolean">true</swrla-isRuleEnabled>
+        <rdfs-comment rdf-datatype="http-//www.w3.org/2001/XMLSchema#string">Age - 50to59</rdfs-comment>
+        <rdfs-label rdf-datatype="http-//www.w3.org/2001/XMLSchema#string">S7</rdfs-label>
+        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#Imp"/>
+        <swrl-body>
+            <rdf-Description>
+                <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf-first>
+                    <rdf-Description>
+                        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl-classPredicate rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person"/>
+                        <swrl-argument1 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#allpeople"/>
+                    </rdf-Description>
+                </rdf-first>
+                <rdf-rest>
+                    <rdf-Description>
+                        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf-first>
+                            <rdf-Description>
+                                <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl-propertyPredicate rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasDevelopmentStage"/>
+                                <swrl-argument1 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#allpeople"/>
+                                <swrl-argument2 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#a50to59"/>
+                            </rdf-Description>
+                        </rdf-first>
+                        <rdf-rest rdf-resource="http-//www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf-Description>
+                </rdf-rest>
+            </rdf-Description>
+        </swrl-body>
+        <swrl-head>
+            <rdf-Description>
+                <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf-first>
+                    <rdf-Description>
+                        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl-propertyPredicate rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#alterRisk"/>
+                        <swrl-argument1 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Diarrhea"/>
+                        <swrl-argument2 rdf-datatype="http-//www.w3.org/2001/XMLSchema#float">1.709</swrl-argument2>
+                    </rdf-Description>
+                </rdf-first>
+                <rdf-rest rdf-resource="http-//www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf-Description>
+        </swrl-head>
+    </rdf-Description>
+    <rdf-Description>
+        <swrla-isRuleEnabled rdf-datatype="http-//www.w3.org/2001/XMLSchema#boolean">true</swrla-isRuleEnabled>
+        <rdfs-comment rdf-datatype="http-//www.w3.org/2001/XMLSchema#string">Age - 5to9</rdfs-comment>
+        <rdfs-label rdf-datatype="http-//www.w3.org/2001/XMLSchema#string">S2</rdfs-label>
+        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#Imp"/>
+        <swrl-body>
+            <rdf-Description>
+                <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf-first>
+                    <rdf-Description>
+                        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl-classPredicate rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person"/>
+                        <swrl-argument1 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#allpeople"/>
+                    </rdf-Description>
+                </rdf-first>
+                <rdf-rest>
+                    <rdf-Description>
+                        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf-first>
+                            <rdf-Description>
+                                <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl-propertyPredicate rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasDevelopmentStage"/>
+                                <swrl-argument1 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#allpeople"/>
+                                <swrl-argument2 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#a5to9"/>
+                            </rdf-Description>
+                        </rdf-first>
+                        <rdf-rest rdf-resource="http-//www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf-Description>
+                </rdf-rest>
+            </rdf-Description>
+        </swrl-body>
+        <swrl-head>
+            <rdf-Description>
+                <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf-first>
+                    <rdf-Description>
+                        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl-propertyPredicate rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#alterRisk"/>
+                        <swrl-argument1 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Diarrhea"/>
+                        <swrl-argument2 rdf-datatype="http-//www.w3.org/2001/XMLSchema#float">0.477</swrl-argument2>
+                    </rdf-Description>
+                </rdf-first>
+                <rdf-rest rdf-resource="http-//www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf-Description>
+        </swrl-head>
+    </rdf-Description>
+    <rdf-Description>
+        <swrla-isRuleEnabled rdf-datatype="http-//www.w3.org/2001/XMLSchema#boolean">true</swrla-isRuleEnabled>
+        <rdfs-comment rdf-datatype="http-//www.w3.org/2001/XMLSchema#string">Age - over60</rdfs-comment>
+        <rdfs-label rdf-datatype="http-//www.w3.org/2001/XMLSchema#string">S8</rdfs-label>
+        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#Imp"/>
+        <swrl-body>
+            <rdf-Description>
+                <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf-first>
+                    <rdf-Description>
+                        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl-classPredicate rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person"/>
+                        <swrl-argument1 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#allpeople"/>
+                    </rdf-Description>
+                </rdf-first>
+                <rdf-rest>
+                    <rdf-Description>
+                        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf-first>
+                            <rdf-Description>
+                                <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl-propertyPredicate rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasDevelopmentStage"/>
+                                <swrl-argument1 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#allpeople"/>
+                                <swrl-argument2 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#over60"/>
+                            </rdf-Description>
+                        </rdf-first>
+                        <rdf-rest rdf-resource="http-//www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf-Description>
+                </rdf-rest>
+            </rdf-Description>
+        </swrl-body>
+        <swrl-head>
+            <rdf-Description>
+                <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf-first>
+                    <rdf-Description>
+                        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl-propertyPredicate rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#alterRisk"/>
+                        <swrl-argument1 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Diarrhea"/>
+                        <swrl-argument2 rdf-datatype="http-//www.w3.org/2001/XMLSchema#float">1.54</swrl-argument2>
+                    </rdf-Description>
+                </rdf-first>
+                <rdf-rest rdf-resource="http-//www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf-Description>
+        </swrl-head>
+    </rdf-Description>
+    <rdf-Description>
+        <swrla-isRuleEnabled rdf-datatype="http-//www.w3.org/2001/XMLSchema#boolean">true</swrla-isRuleEnabled>
+        <rdfs-comment rdf-datatype="http-//www.w3.org/2001/XMLSchema#string">Gender - Female</rdfs-comment>
+        <rdfs-label rdf-datatype="http-//www.w3.org/2001/XMLSchema#string">S10</rdfs-label>
+        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#Imp"/>
+        <swrl-body>
+            <rdf-Description>
+                <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf-first>
+                    <rdf-Description>
+                        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl-classPredicate rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person"/>
+                        <swrl-argument1 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#allpeople"/>
+                    </rdf-Description>
+                </rdf-first>
+                <rdf-rest>
+                    <rdf-Description>
+                        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf-first>
+                            <rdf-Description>
+                                <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl-propertyPredicate rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasGender"/>
+                                <swrl-argument1 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#allpeople"/>
+                                <swrl-argument2 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Female"/>
+                            </rdf-Description>
+                        </rdf-first>
+                        <rdf-rest rdf-resource="http-//www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf-Description>
+                </rdf-rest>
+            </rdf-Description>
+        </swrl-body>
+        <swrl-head>
+            <rdf-Description>
+                <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf-first>
+                    <rdf-Description>
+                        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl-propertyPredicate rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#alterRisk"/>
+                        <swrl-argument1 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Diarrhea"/>
+                        <swrl-argument2 rdf-datatype="http-//www.w3.org/2001/XMLSchema#float">1.055</swrl-argument2>
+                    </rdf-Description>
+                </rdf-first>
+                <rdf-rest rdf-resource="http-//www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf-Description>
+        </swrl-head>
+    </rdf-Description>
+    <rdf-Description>
+        <swrla-isRuleEnabled rdf-datatype="http-//www.w3.org/2001/XMLSchema#boolean">true</swrla-isRuleEnabled>
+        <rdfs-comment rdf-datatype="http-//www.w3.org/2001/XMLSchema#string">Gender - Male</rdfs-comment>
+        <rdfs-label rdf-datatype="http-//www.w3.org/2001/XMLSchema#string">S9</rdfs-label>
+        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#Imp"/>
+        <swrl-body>
+            <rdf-Description>
+                <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf-first>
+                    <rdf-Description>
+                        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl-classPredicate rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person"/>
+                        <swrl-argument1 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#allpeople"/>
+                    </rdf-Description>
+                </rdf-first>
+                <rdf-rest>
+                    <rdf-Description>
+                        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf-first>
+                            <rdf-Description>
+                                <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl-propertyPredicate rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasGender"/>
+                                <swrl-argument1 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#allpeople"/>
+                                <swrl-argument2 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Male"/>
+                            </rdf-Description>
+                        </rdf-first>
+                        <rdf-rest rdf-resource="http-//www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf-Description>
+                </rdf-rest>
+            </rdf-Description>
+        </swrl-body>
+        <swrl-head>
+            <rdf-Description>
+                <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf-first>
+                    <rdf-Description>
+                        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl-propertyPredicate rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#alterRisk"/>
+                        <swrl-argument1 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Diarrhea"/>
+                        <swrl-argument2 rdf-datatype="http-//www.w3.org/2001/XMLSchema#float">0.95</swrl-argument2>
+                    </rdf-Description>
+                </rdf-first>
+                <rdf-rest rdf-resource="http-//www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf-Description>
+        </swrl-head>
+    </rdf-Description>
+    <rdf-Description>
+        <swrla-isRuleEnabled rdf-datatype="http-//www.w3.org/2001/XMLSchema#boolean">true</swrla-isRuleEnabled>
+        <rdfs-comment rdf-datatype="http-//www.w3.org/2001/XMLSchema#string">Prevalence</rdfs-comment>
+        <rdfs-label rdf-datatype="http-//www.w3.org/2001/XMLSchema#string">S11</rdfs-label>
+        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#Imp"/>
+        <swrl-body>
+            <rdf-Description>
+                <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf-first>
+                    <rdf-Description>
+                        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl-classPredicate rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person"/>
+                        <swrl-argument1 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#allpeople"/>
+                    </rdf-Description>
+                </rdf-first>
+                <rdf-rest>
+                    <rdf-Description>
+                        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf-first>
+                            <rdf-Description>
+                                <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl-propertyPredicate rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#liveIn"/>
+                                <swrl-argument1 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#allpeople"/>
+                                <swrl-argument2 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#India"/>
+                            </rdf-Description>
+                        </rdf-first>
+                        <rdf-rest rdf-resource="http-//www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf-Description>
+                </rdf-rest>
+            </rdf-Description>
+        </swrl-body>
+        <swrl-head>
+            <rdf-Description>
+                <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf-first>
+                    <rdf-Description>
+                        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl-propertyPredicate rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#setRisk"/>
+                        <swrl-argument1 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Diarrhea"/>
+                        <swrl-argument2 rdf-datatype="http-//www.w3.org/2001/XMLSchema#float">29.22</swrl-argument2>
+                    </rdf-Description>
+                </rdf-first>
+                <rdf-rest rdf-resource="http-//www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf-Description>
+        </swrl-head>
+    </rdf-Description>
+    <rdf-Description>
+        <swrla-isRuleEnabled rdf-datatype="http-//www.w3.org/2001/XMLSchema#boolean">true</swrla-isRuleEnabled>
+        <rdfs-comment rdf-datatype="http-//www.w3.org/2001/XMLSchema#string">Age - 10to19</rdfs-comment>
+        <rdfs-label rdf-datatype="http-//www.w3.org/2001/XMLSchema#string">S3</rdfs-label>
+        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#Imp"/>
+        <swrl-body>
+            <rdf-Description>
+                <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf-first>
+                    <rdf-Description>
+                        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl-classPredicate rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Person"/>
+                        <swrl-argument1 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#allpeople"/>
+                    </rdf-Description>
+                </rdf-first>
+                <rdf-rest>
+                    <rdf-Description>
+                        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf-first>
+                            <rdf-Description>
+                                <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl-propertyPredicate rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#hasDevelopmentStage"/>
+                                <swrl-argument1 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#allpeople"/>
+                                <swrl-argument2 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#a10to19"/>
+                            </rdf-Description>
+                        </rdf-first>
+                        <rdf-rest rdf-resource="http-//www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf-Description>
+                </rdf-rest>
+            </rdf-Description>
+        </swrl-body>
+        <swrl-head>
+            <rdf-Description>
+                <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf-first>
+                    <rdf-Description>
+                        <rdf-type rdf-resource="http-//www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl-propertyPredicate rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#alterRisk"/>
+                        <swrl-argument1 rdf-resource="http-//www.vhynaulia.com/revalina/ontologies/2016/10/pwidas#Diarrhea"/>
+                        <swrl-argument2 rdf-datatype="http-//www.w3.org/2001/XMLSchema#float">0.406</swrl-argument2>
+                    </rdf-Description>
+                </rdf-first>
+                <rdf-rest rdf-resource="http-//www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf-Description>
+        </swrl-head>
+    </rdf-Description>
+</rdf-RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https-//github.com/owlcs/owlapi -->
+

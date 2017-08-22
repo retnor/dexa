@@ -28,7 +28,7 @@ public class ReadOntology {
 	public Rules rules;
 	
 	private List<String> values = null;
-	private File fXmlFile = new File("rule2.xml");
+	private File fXmlFile = new File("Anthrax.xml");
 	private DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 	private DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 	private Document doc = dBuilder.parse(fXmlFile);

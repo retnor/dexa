@@ -12,18 +12,19 @@ public class GetBeliefs {
 	public static void main(String args[]) throws NeticaException{
 		double prob = 0.0;
 		
+		inputtedBeliefs.add("Carnivore");	//Eating
 		inputtedBeliefs.add("Equatorial");	//Hemisphere
 		inputtedBeliefs.add("Female");		//Gender
 		inputtedBeliefs.add("Forest");		//Natural
 		inputtedBeliefs.add("Humid");		//Weather
-		inputtedBeliefs.add("Military");	//Profession
+		inputtedBeliefs.add("Jobless");		//Occupation
 		inputtedBeliefs.add("Influenza");	//PreExistingIllness
 		inputtedBeliefs.add("Lake");		//ManMade
-		inputtedBeliefs.add("Adults");		//DevelopmentStage
+		inputtedBeliefs.add("Children");	//DevelopmentStage
 		inputtedBeliefs.add("Indonesia");	//Country
-		inputtedBeliefs.add("Winter");		//Season
+		inputtedBeliefs.add("Rain");		//Season
 		inputtedBeliefs.add("Rash");		//Symptom
-		inputtedBeliefs.add("Smoking");		//Habits
+		inputtedBeliefs.add("Smoker");		//Smoking
 		
 		prob = calculate();
 		
@@ -33,23 +34,22 @@ public class GetBeliefs {
 	public static double calculate() throws NeticaException{
 		Environ env = new Environ (null);
 		
-		Net net = new Net (new Streamer ("Dexa4.dne"));
+		Net net = new Net (new Streamer ("Anthrax.dne"));
 		
-		Node tuberculosis	= net.getNode("Tuberculosis");
+		Node disease	= net.getNode("Anthrax");
 		
 		//Read in the net
 		NodeList nodes = net.getNodes();
 		int numNodes = nodes.size();
 
 		for(int i=0; i<(numNodes-1); i++){
-			Node temporary = nodes.getNode(i);
-			//System.out.println(temporary);
+			Node temporary = nodes.getNode(i);			
 			temporary.finding().clear();
 			temporary.finding().enterState(inputtedBeliefs.get(i));
 		}
 		
 		net.compile();
 		
-		return tuberculosis.getBelief("AtRisk");
+		return disease.getBelief("AtRisk");
 	}
 }

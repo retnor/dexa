@@ -1,0 +1,89 @@
+// ~->[DNET-1]->~
+
+// File created by an unlicensed user using Netica 5.04 on Aug 20, 2017 at 10:35:22.
+
+bnet Anthrax {
+autoupdate = FALSE;
+whenchanged = 1503221722;
+
+node Relationship {
+	kind = NATURE;
+	discrete = TRUE;
+	chance = CHANCE;
+	states = (Offspring, Parents, Sibling);
+	parents = ();
+	probs = 
+		// Offspring    Parents      Sibling      
+		  (0.35,        0.15,        0.5);
+	};
+
+node Genetic {
+	kind = NATURE;
+	discrete = TRUE;
+	chance = CHANCE;
+	states = (None, One, Two);
+	parents = ();
+	probs = 
+		// None         One          Two          
+		  (0.8,         0.1,         0.1);
+	};
+
+node Country {
+	kind = NATURE;
+	discrete = TRUE;
+	chance = DETERMIN;
+	states = (UK);
+	parents = ();
+	functable = 
+		  (UK);
+	};
+
+node Smoking {
+	kind = NATURE;
+	discrete = TRUE;
+	chance = CHANCE;
+	states = (NonSmoker, Smoker, Unknown);
+	parents = ();
+	probs = 
+		// NonSmoker    Smoker       Unknown      
+		  (0.6,         0.25,        0.15);
+	};
+
+node Crohn {
+	kind = NATURE;
+	discrete = TRUE;
+	chance = CHANCE;
+	states = (AtRisk, NotAtRisk);
+	parents = (Relationship, Genetic, Country, Smoking);
+	probs = 
+		// AtRisk       NotAtRisk     // Relationship Genetic Country Smoking   
+		  (0.0119,      0.9881,       // Offspring    None    UK      NonSmoker 
+		   0.0238,      0.9762,       // Offspring    None    UK      Smoker    
+		   0.01445,     0.98555,      // Offspring    None    UK      Unknown   
+		   0.026656,    0.973344,     // Offspring    One     UK      NonSmoker 
+		   0.053312,    0.946688,     // Offspring    One     UK      Smoker    
+		   0.032368,    0.967632,     // Offspring    One     UK      Unknown   
+		   0.109956,    0.890044,     // Offspring    Two     UK      NonSmoker 
+		   0.219912,    0.780088,     // Offspring    Two     UK      Smoker    
+		   0.133518,    0.866482,     // Offspring    Two     UK      Unknown   
+		   0.00896,     0.99104,      // Parents      None    UK      NonSmoker 
+		   0.01792,     0.98208,      // Parents      None    UK      Smoker    
+		   0.01088,     0.98912,      // Parents      None    UK      Unknown   
+		   0.0200704,   0.9799296,    // Parents      One     UK      NonSmoker 
+		   0.0401408,   0.9598592,    // Parents      One     UK      Smoker    
+		   0.0243712,   0.9756288,    // Parents      One     UK      Unknown   
+		   0.0827904,   0.9172096,    // Parents      Two     UK      NonSmoker 
+		   0.1655808,   0.8344192,    // Parents      Two     UK      Smoker    
+		   0.1005312,   0.8994688,    // Parents      Two     UK      Unknown   
+		   0.0189,      0.9811,       // Sibling      None    UK      NonSmoker 
+		   0.0378,      0.9622,       // Sibling      None    UK      Smoker    
+		   0.02295,     0.97705,      // Sibling      None    UK      Unknown   
+		   0.042336,    0.957664,     // Sibling      One     UK      NonSmoker 
+		   0.084672,    0.915328,     // Sibling      One     UK      Smoker    
+		   0.051408,    0.948592,     // Sibling      One     UK      Unknown   
+		   0.174636,    0.825364,     // Sibling      Two     UK      NonSmoker 
+		   0.349272,    0.650728,     // Sibling      Two     UK      Smoker    
+		   0.212058,    0.787942);    // Sibling      Two     UK      Unknown   ;
+	whenchanged = 1503221722;
+	};
+};

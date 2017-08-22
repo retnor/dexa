@@ -1,0 +1,54 @@
+// ~->[DNET-1]->~
+
+// File created by an unlicensed user using Netica 5.04 on Aug 09, 2017 at 15:22:00.
+
+bnet Diarrhea {
+autoupdate = FALSE;
+
+node Country {
+	kind = NATURE;
+	discrete = TRUE;
+	states = (India);
+	parents = ();
+	};
+
+node Gender {
+	kind = NATURE;
+	discrete = TRUE;
+	states = (Female, Male);
+	parents = ();
+	};
+
+node Age {
+	kind = NATURE;
+	discrete = TRUE;
+	states = (a0to4, a10to19, a20to29, a30to39, a40to49, a50to59, a5to9, over60);
+	parents = ();
+	};
+
+node Diarrhea {
+	kind = NATURE;
+	discrete = TRUE;
+	chance = CHANCE;
+	states = (AtRisk, NotAtRisk);
+	parents = (Country, Gender, Age);
+	probs = 
+		// AtRisk       NotAtRisk     // Country Gender Age     
+		  (0.9627302,   0.03726977,   // India   Female a0to4   
+		   0.125158,    0.874842,     // India   Female a10to19 
+		   0.1569099,   0.8430901,    // India   Female a20to29 
+		   0.2706619,   0.729338,     // India   Female a30to39 
+		   0.3800981,   0.6199019,    // India   Female a40to49 
+		   0.5268351,   0.4731649,    // India   Female a50to59 
+		   0.1470453,   0.8529547,    // India   Female a5to9   
+		   0.4747373,   0.5252627,    // India   Female over60  
+		   0.8669136,   0.1330864,    // India   Male   a0to4   
+		   0.1127015,   0.8872985,    // India   Male   a10to19 
+		   0.1412933,   0.8587067,    // India   Male   a20to29 
+		   0.243724,    0.756276,     // India   Male   a30to39 
+		   0.3422684,   0.6577315,    // India   Male   a40to49 
+		   0.4744013,   0.5255987,    // India   Male   a50to59 
+		   0.1324104,   0.8675896,    // India   Male   a5to9   
+		   0.4274886,   0.5725114);   // India   Male   over60  ;
+	};
+};

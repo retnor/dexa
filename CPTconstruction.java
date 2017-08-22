@@ -23,7 +23,7 @@ public class CPTconstruction {
 		//input: Equatorial,Female,Forest,Cold,Farmers,Influenza,Farms,Adults,Indonesia,Autumn,Nausea,EatingMeats
 		
 		//initial probability of a person contracting a disease
-		jprob = 0;		
+		jprob = 1;		
 		String[] itemList = input.split(",");
 		
 		//if there is a certain condition will make pathogen inactive (e.g. weather, season, location)
@@ -42,31 +42,32 @@ public class CPTconstruction {
 				Rules colrul = ruleObjmap.get(disease+"-"+item);
 				
 				alteration = colrul.getRuleAlter();
-				if(alteration.equals("addRisk"))
-					jprob = jprob + colrul.getProb();
-				else if(alteration.equals("reduceRisk"))
-					jprob = jprob - colrul.getProb();
+				if(alteration.equals("alterRisk"))
+					jprob = jprob * colrul.getProb();
 				else if(alteration.equals("setRisk")){
 					pathogenflag = true;
 					tempPathogen = colrul.getProb();
 				}
 			}
 			
-			//checking that any probabilities would go between 0 and 1
-			//this condition happens when a person owns all disease-increasing-risk attributes 
-			//and the sum product of all probabilities in all rules are exceed than 1
-			if(jprob >= 1)
-				jprob = jprob - 1;
-			
-			//this condition happens when there is more disease-reducing-risk attributes 
-			//rather than disease-increasing-risk attributes owned by a person
-			else if(jprob < 0)
-				jprob = 0;
+//			//checking that any probabilities would go between 0 and 1
+//			//this condition happens when a person owns all disease-increasing-risk attributes 
+//			//and the sum product of all probabilities in all rules are exceed than 1
+//			if(jprob >= 1)
+//				jprob = jprob - 1;
+//			
+//			//this condition happens when there is more disease-reducing-risk attributes 
+//			//rather than disease-increasing-risk attributes owned by a person
+//			else if(jprob < 0)
+//				jprob = 0;
 		}
 		
 		//assigning the end result of jprob with prob value given in setRisk, only if there is Pathogen rule type found
 		if(pathogenflag){
-			jprob = tempPathogen;
+			if(tempPathogen==0)
+				jprob = tempPathogen;
+			else
+				jprob = jprob*tempPathogen;
 		}
 	}
 }

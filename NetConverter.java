@@ -39,13 +39,18 @@ public class NetConverter {
 	    	new Environ (null);
 			
 			Net   net          = new Net();
-	    	net.setName("dexa4");
+	    	net.setName("Anthrax");
 	    	
-	    	Node  tuberculosis   = new Node ("Tuberculosis",     "AtRisk, NotAtRisk",    net);
+	    	Node  disease   = new Node ("Anthrax",     "AtRisk, NotAtRisk",    net);
 	    	Node tempID = null;
 	    	Node  tempnode = null;
 	    	
 	    	int numOfnodes = 0;
+	    	
+            ImpossibleCombinations check = new ImpossibleCombinations();
+        	float atrisk=0;
+        	CPTconstruction setcpt;
+        	GetMarginalProb setMarginal;
 	    	
 	    	for (String key : map.keySet()) {
 	    		 String statenames = "";
@@ -68,13 +73,18 @@ public class NetConverter {
 				     //erasing the last comma of generated state names
 				     statecols = statenames.substring(0, (statenames.length()-1));
 				     tempnode = new Node (key, statecols, net);
+				     
+				     //setMarginal = new GetMarginalProb("Anthrax.xls", key);
+				     
+				     //tempnode.setCPTable(setMarginal.MargProb);
 	    		 }
 	    		 
 	    		 //adding queue feature of multimap which make sure that keys are ordered as inserted
 	    		 queue.add(key);
 	    		 //System.out.println(queue.size());
 	    		 numOfnodes++;
-			     tuberculosis.addLink(tempnode);
+	    		 disease.addLink(tempnode);
+	    		 
 			}
 
             /** CHANGED BITS
@@ -99,9 +109,9 @@ public class NetConverter {
             try{
             	PrintWriter writer = new PrintWriter("log.txt");
             
-            ImpossibleCombinations check = new ImpossibleCombinations();
-        	float atrisk=0;
-        	CPTconstruction setcpt;
+//          ImpossibleCombinations check = new ImpossibleCombinations();
+//        	float atrisk=0;
+//        	CPTconstruction setcpt;
         	
             for (int n=1; n<=(numOfnodes-1); n++) {
             
@@ -130,7 +140,7 @@ public class NetConverter {
                             // containing permutations of every impossible conditions
                         	boolean isValid = check.checkValidPermutation(item);
                             if (isValid) {
-                                setcpt = new CPTconstruction(tempStemp, "Tuberculosis");
+                                setcpt = new CPTconstruction(tempStemp, "Anthrax");
                                 atrisk = setcpt.jprob;
                                 jailbreakCounter++;
                             } 
@@ -141,7 +151,7 @@ public class NetConverter {
                             //writer.println(tempStemp+": "+atrisk);
                             //System.out.println(tempStemp+" :"+atrisk);
                             //tuberculosis.setCPTable(tempStemp, 0.03, (1-0.03));
-                            tuberculosis.setCPTable(tempStemp, atrisk, (1-atrisk));
+                            disease.setCPTable(tempStemp, atrisk/100, (1-(atrisk/100)));
                        // isValid -> true if valid; false otherwise
                         }
                     }
@@ -160,9 +170,10 @@ public class NetConverter {
             /** END OF CHANGE **/
 			
 			System.out.println("Finish writing "+data.size()+" lines of CPT");
-			System.out.println("Contain "+jailbreakCounter+" lines of impossible combination");
+			System.out.println("Contain "+jailbreakCounter+" lines of possible combinations and "+(data.size()-jailbreakCounter)+
+					" impossible combinations");
 			
-			Streamer stream = new Streamer ("Dexa4.dne");
+			Streamer stream = new Streamer ("Anthrax.dne");
 	    	net.write(stream);
 	    	
 		} catch (NeticaException e) {

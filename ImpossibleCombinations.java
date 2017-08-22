@@ -15,23 +15,11 @@ public class ImpossibleCombinations {
 	        {"Autumn", "Indonesia"},
 	        {"Spring", "Indonesia"},
 	        
-//	        {"Indonesia", "Northern"},
-//	        {"Indonesia", "Southern"},
-//	        {"Northern", "Indonesia"},
-//	        {"Southern", "Indonesia"},
-//	        
-//	        {"US", "Southern"},
-//	        {"Southern", "US"},
-	        
-	        {"US", "Dry"},
-	        {"US", "Rain"},
-	        {"Dry", "US"},
-	        {"Rain", "US"},
-	        
 	        {"Children", "Farmers"},
 	        {"Children", "Military"},
 	        {"Farmers", "Children"},
 	        {"Military", "Children"},
+	      //this eliminates 96768 lines
 	    };
 	private int addingLocationIndex = 0;
 	
